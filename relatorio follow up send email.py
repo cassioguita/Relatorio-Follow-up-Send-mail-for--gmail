@@ -25,8 +25,8 @@ print(ticket_medio)
 
 email_msg = EmailMessage()
 email_msg['Subject'] = 'Relatorio de Vendas'
-email_msg['From'] = ''
-email_msg['To'] = ''
+email_msg['From'] = ''# colocar email remetente
+email_msg['To'] = '' # colocar email destino
 email_msg.add_alternative(f'''\
 <html>
 <body>
@@ -51,7 +51,7 @@ email_msg.add_alternative(f'''\
 
 # Conectar ao servidor SMTP do Gmail
 with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-    smtp.login('', '')
+    smtp.login('', '') # colocar aqui email ,  e senha especial no gmail para autorização 
     smtp.send_message(email_msg)
 
 print("mensagem enviada")
